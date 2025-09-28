@@ -6,7 +6,7 @@ export function Product({product, loadCart}) {
     const [quantity, setQuantity] = useState(1);
 
     const addToCart = async () => {
-                    await axios.post('/api/cart-items', {
+                    await axios.post('https://react-course-ecommerce-backend-1.onrender.com/api/cart-items', {
                         productId: product.id,
                         quantity
                     });
@@ -78,3 +78,4 @@ export function Product({product, loadCart}) {
         </div>
     );
 }
+
