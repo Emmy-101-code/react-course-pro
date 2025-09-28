@@ -9,12 +9,12 @@ export function OrderSummary({ cart, deliveryOptions, loadCart }) {
   const [newQuantity, setNewQuantity] = useState(1);
 
   const deleteCartItem = async (productId) => {
-    await axios.delete(`/api/cart-items/${productId}`);
+    await axios.delete(`https://react-course-ecommerce-backend-1.onrender.com/api/cart-items/${productId}`);
     await loadCart();
   };
 
   const updateCartItem = async (cartItem) => {
-   await axios.put(`/api/cart-items/${cartItem.productId}`, {
+   await axios.put(`https://react-course-ecommerce-backend-1.onrender.com/api/cart-items/${cartItem.productId}`, {
       productId: cartItem.productId,
       quantity: Number(newQuantity),
       deliveryOptionId: cartItem.deliveryOptionId,
@@ -106,3 +106,4 @@ export function OrderSummary({ cart, deliveryOptions, loadCart }) {
     </div>
   );
 }
+
