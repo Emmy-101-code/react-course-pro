@@ -12,7 +12,7 @@ const [quantity] = useState(1);
 
 
     useEffect(() => { 
-        axios.get('/api/orders?expand=products')
+        axios.get('https://react-course-ecommerce-backend-1.onrender.com/api/orders?expand=products')
             .then((response) => {
                 setOrders(response.data);
 
@@ -117,4 +117,5 @@ const [quantity] = useState(1);
         </>
     );
   }
+
 
