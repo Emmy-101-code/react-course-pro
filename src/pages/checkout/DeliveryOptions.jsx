@@ -18,7 +18,7 @@ export function DeliveryOption({cartItem, deliveryOptions,loadCart}) {
                 }
 
                const updateDeliveryOption = async () => {
-               await axios.put(`/api/cart-items/${cartItem.productId}`, {
+               await axios.put(`https://react-course-ecommerce-backend-1.onrender.com/api/cart-items/${cartItem.productId}`, {
                 deliveryOptionId : deliveryOption.id
                });
 
@@ -51,3 +51,4 @@ export function DeliveryOption({cartItem, deliveryOptions,loadCart}) {
         </div>
     );
 }
+
