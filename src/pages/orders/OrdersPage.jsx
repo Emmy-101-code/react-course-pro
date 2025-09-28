@@ -20,7 +20,7 @@ const [quantity] = useState(1);
     });
 
     const addToCart = async (productId) => {
-    await axios.post('/api/cart-items', {
+    await axios.post('https://react-course-ecommerce-backend-1.onrender.com/api/cart-items', {
         productId,
         quantity
     });
@@ -117,3 +117,4 @@ const [quantity] = useState(1);
         </>
     );
   }
+
