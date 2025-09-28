@@ -13,7 +13,7 @@ beforeEach(() => {
 loadCart = vi.fn();
 
 axios.get.mockImplementation(async (urlPath) => {
-    if (urlPath === '/api/products') {
+    if (urlPath === 'https://react-course-ecommerce-backend-1.onrender.com/api/products') {
         return {
             data: [{
                 id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -68,4 +68,5 @@ it('displays the products correct', async () => {
          .getByText('Intermediate Size Basketball')
        ).toBeInTheDocument();
 });
+
 });
