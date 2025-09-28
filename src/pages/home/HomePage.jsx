@@ -10,7 +10,7 @@ const[products, setProducts] = useState([]);
 
     useEffect(() => {
         const getHomeData = async () => {
-  const response = await axios.get('/api/products');
+  const response = await axios.get('https://react-course-ecommerce-backend-1.onrender.com/api/products');
        setProducts(response.data); 
         };
       
@@ -31,3 +31,4 @@ const[products, setProducts] = useState([]);
         </>
     );
 }
+
