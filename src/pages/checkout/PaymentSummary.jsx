@@ -7,7 +7,7 @@ export function PaymentSummary({paymentSummary, loadCart}) {
     const navigate = useNavigate();
 
     const createOrder = async () => {
-        await axios.post('/api/orders');
+        await axios.post('https://react-course-ecommerce-backend-1.onrender.com/api/orders');
         await loadCart();
         navigate('/orders');
     };
@@ -66,6 +66,7 @@ export function PaymentSummary({paymentSummary, loadCart}) {
     );
 
 }
+
 
 
 
