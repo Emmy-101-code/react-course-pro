@@ -7,29 +7,19 @@ import "./TrackingPage.css";
 export function TrackingPage() {
   const { orderId } = useParams(); // from the URL /tracking/:orderId
   const [tracking, setTracking] = useState(null);
-  const [error, setError] = useState(null);
+ 
 
   useEffect(() => {
     const loadTracking = async () => {
       try {
         const response = await axios.get(
-          `https://react-course-ecommerce-backend-1.onrender.com/api/orders/track/${orderId}`
+          `https://react-course-ecommerce-backend-1.onrender.com/api/tracking/${orderId}`
         );
         setTracking(response.data);
-      } catch (err) {
-        setError("Could not load tracking data.");
-        console.error(err);
-      }
+      } 
     };
 
-    if (orderId) {
-      loadTracking();
-    }
-  }, [orderId]);
-
-  if (error) return <p>{error}</p>;
-  if (!tracking) return <p>Loading tracking info...</p>;
-
+   
   return (
     <div className="tracking-page">
       <div className="order-tracking">
@@ -72,3 +62,4 @@ export function TrackingPage() {
     </div>
   );
 }
+
