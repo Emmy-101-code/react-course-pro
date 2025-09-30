@@ -37,10 +37,14 @@ fetchCheckoutData();
             </a>
           </div>
 
-          <div className="checkout-header-middle-section">
-            Checkout (<a className="return-to-home-link"
-              href="/">3 items</a>)
-          </div>
+         <div className="checkout-header-middle-section">
+  Checkout (
+    <a className="return-to-home-link" href="/">
+      {cart.reduce((sum, item) => sum + item.quantity, 0)} items
+    </a>
+  )
+</div>
+
 
           <div className="checkout-header-right-section">
             <img src="images/icons/checkout-lock-icon.png" />
@@ -63,5 +67,6 @@ fetchCheckoutData();
                 </>
                 );
                 }
+
 
 
