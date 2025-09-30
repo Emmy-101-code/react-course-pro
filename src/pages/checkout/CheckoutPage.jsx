@@ -17,7 +17,7 @@ export function CheckoutPage({ cart , loadCart}) {
             'https://react-course-ecommerce-backend-1.onrender.com/api/delivery-options?expand=estimatedDeliveryTime');
             setDeliveryOptions(response.data);
             
-                response = await axios.get( '/api/payment-summary');  
+                response = await axios.get( 'https://react-course-ecommerce-backend-1.onrender.com/api/payment-summary');  
                 setPaymentSummary(response.data);
                 };
 fetchCheckoutData();
@@ -63,4 +63,5 @@ fetchCheckoutData();
                 </>
                 );
                 }
+
 
