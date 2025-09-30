@@ -1,10 +1,22 @@
-import { formatMoney } from '../utils/money';
+import axios from 'axios';
+import dayjs from 'dayjs';
+import { useState, useEffect, Fragment } from 'react';
+import { Header } from '../../components/Header';
+import { formatMoney } from '../../utils/money';
 
+import { formatMoney } from '../utils/money';
 import './TrackingPage.css';
 
 
-export function TrackingPage() {
+export function TrackingPage({ cart, loadCart}) {
+const [orders] = useState([]);
 
+       useEffect(() => { 
+        axios.get('/api/orders?expand=products')
+            .then((response) => {
+                setOrders(response.data);
+
+            });
 
 
     return (
@@ -59,3 +71,4 @@ export function TrackingPage() {
             </>
     );
 }
+
